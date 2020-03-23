@@ -3,37 +3,38 @@ import axios from "axios";
 import Dropdown from "react-dropdown";
 import parse from "html-react-parser";
 
-import { useFetchShow } from "./api/fetchShow"
-
+import { fetchShow } from './api/fetchShow'
 import { formatSeasons } from "./utils/formatSeasons";
 
 import Episodes from "./components/Episodes";
 import "./styles.css";
 
-export default function App(props) {
-  // const [show, setShow] = useState(null);
-  // const [seasons, setSeasons] = useState([]);
-
+export default function App() {
+  const [show, setShow] = useState(null);
+  const [seasons, setSeasons] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState("");
   const episodes = seasons[selectedSeason] || [];
 
-  const [seasons, setSeasons] = useFetchShow(episodes)
-
-  // useEffect was here
+  useEffect(() => {
+    fetchShow().then(res => {
+      setShow(res.data);
+      setSeasons(formatSeasons(res.data._embedded.episodes))
+    })
+  }, []);
 
   const handleSelect = e => {
     setSelectedSeason(e.value);
   };
 
-  if (!props.axiosshow) {
+  if (!show) {
     return <h2>Fetching data...</h2>;
   }
 
   return (
     <div className="App">
-      <img className="poster-img" src={props.show.image.original} alt={props.show.name} />
-      <h1>{props.show.name}</h1>
-      {parse(props.show.summary)}
+      <img className="poster-img" src={show.image.original} alt={show.name} />
+      <h1>{show.name}</h1>
+      {parse(show.summary)}
       <Dropdown
         options={Object.keys(seasons)}
         onChange={handleSelect}
