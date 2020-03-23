@@ -32,3 +32,4 @@ test("<App/> Snapshot Full", async () => {
   
   expect(wrapper.asFragment()).toMatchSnapshot()
   })
+
