@@ -19,9 +19,16 @@ import App from "./App";
 
 afterEach(rtl.cleanup);
 
-test("<App/> Snapshot", async () => {
+test("<App/> Snapshot of Fetching data", async () => {
 const wrapper = rtl.render(<App/>)
 await wrapper.findAllByText(/fetching/i)
 
 expect(wrapper.asFragment()).toMatchSnapshot()
 })
+
+test("<App/> Snapshot Full", async () => {
+  const wrapper = rtl.render(<App/>)
+  await wrapper.findAllByText(/stranger/i)
+  
+  expect(wrapper.asFragment()).toMatchSnapshot()
+  })
