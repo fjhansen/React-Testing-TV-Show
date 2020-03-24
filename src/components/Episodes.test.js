@@ -9,7 +9,8 @@ import Episodes from "./Episodes"
 
 test("<Episodes/> Snapshot Full", async () => {
   const wrapper = rtl.render(<Episodes episodes={[]}/>)
-  await wrapper.findAllByText(/minutes/i)
+  await wrapper.findAllByTestId(/episodes/i)
   
+
   expect(wrapper.asFragment()).toMatchSnapshot()
   })
