@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> Snapshot Full 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <img
+      alt="Stranger Things"
+      class="poster-img"
+      src="http://static.tvmaze.com/uploads/images/original_untouched/200/501942.jpg"
+    />
+    <h1>
+      Stranger Things
+    </h1>
+    <p>
+      A love letter to the '80s classics that captivated a generation, 
+      <b>
+        Stranger Things
+      </b>
+       is set in 1983 Indiana, where a young boy vanishes into thin air. As friends, family and local police search for answers, they are drawn into an extraordinary mystery involving top-secret government experiments, terrifying supernatural forces and one very strange little girl.
+    </p>
+    <div
+      class="Dropdown-root"
+    >
+      <div
+        aria-haspopup="listbox"
+        class="Dropdown-control"
+      >
+        <div
+          class="Dropdown-placeholder is-selected"
+        >
+          Select a season
+        </div>
+        <div
+          class="Dropdown-arrow-wrapper"
+        >
+          <span
+            class="Dropdown-arrow"
+          />
+        </div>
+      </div>
+    </div>
+    <button>
+       Clear
+    </button>
+    <div
+      class="episodes"
+      data-testid="episodes"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<App/> Snapshot of Fetching data 1`] = `
+<DocumentFragment>
+  <h2>
+    Fetching data...
+  </h2>
+</DocumentFragment>
+`;

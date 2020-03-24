@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Episodes/> Snapshot Full 1`] = `
+<DocumentFragment>
+  <div
+    class="episodes"
+    data-testid="episodes"
+  />
+</DocumentFragment>
+`;
