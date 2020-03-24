@@ -9,7 +9,7 @@ import { formatSeasons } from "./utils/formatSeasons";
 import Episodes from "./components/Episodes";
 import "./styles.css";
 
-export default function App() {
+export default function App(props) {
   const [show, setShow] = useState(null);
   const [seasons, setSeasons] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState("");
@@ -40,7 +40,10 @@ export default function App() {
         onChange={handleSelect}
         value={selectedSeason || "Select a season"}
         placeholder="Select an option"
+        id='drop'
       />
+      <button onClick={() => setSelectedSeason([])}> Clear
+      </button>
       <Episodes episodes={episodes} />
     </div>
   );
