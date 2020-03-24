@@ -33,3 +33,16 @@ test("<App/> Snapshot Full", async () => {
   expect(wrapper.asFragment()).toMatchSnapshot()
   })
 
+  test("clear seasons", async () => {
+    const wrapper = rtl.render(<App/>)
+    await wrapper.findAllByText(/select/i)
+
+    const clear = wrapper.getByText(/clear/i)
+    wrapper.debug()
+    rtl.act(() => {
+      rtl.fireEvent.click(clear)
+    })
+    expect(wrapper.queryByText(/select/i)).toBeNull()
+    wrapper.debug()
+  })
+

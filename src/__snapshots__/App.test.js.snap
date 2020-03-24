@@ -41,6 +41,9 @@ exports[`<App/> Snapshot Full 1`] = `
         </div>
       </div>
     </div>
+    <button>
+       Clear
+    </button>
     <div
       class="episodes"
       data-testid="episodes"
